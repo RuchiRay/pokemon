@@ -6,6 +6,7 @@ import { Favourite } from "./pages/Favourite";
 import { SinglePage } from "./pages/SinglePage";
 import { Gallery } from "./pages/Gallery";
 function App() {
+  
   return (
     <div className="App">
       <Router>

@@ -1,4 +1,18 @@
-.fav-banner{
-background:var(--bg-gradient);
-height: 400px;
+.fav-banner {
+  background: var(--bg-gradient);
+  height: 400px;
+}
+.fav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 25%;
+  background-color: aliceblue;
+  width: 1300px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ font-family: var(--text-font-family);
+ flex-wrap: wrap;
 }
