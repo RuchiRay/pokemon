@@ -4,9 +4,31 @@ import { ImHeart } from "react-icons/im";
 
 import "../styles/favourite.css";
 export const Favourite = () => {
-  const { favList ,handleFav} = useGlobalContext();
+  const { favList, handleFav } = useGlobalContext();
   console.log(favList);
-  
+  if (favList.length === 0) {
+    return (
+      <div className="favourite-wrapper">
+        <div className="fav-banner">
+          <div className="heading-box">
+            <div className="left"></div>
+            <h2>Your Favourites</h2>
+            <div className="right"></div>
+          </div>
+        </div>
+        <div className="fav-center-empty">
+          <div className="nothing">
+            <h1>No favourites added yet</h1>
+            <h2>
+              You can click on the little hearts on the cards to add your
+              favourite pokemon
+            </h2>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="favourite-wrapper">
       <div className="fav-banner">

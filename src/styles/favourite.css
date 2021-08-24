@@ -16,3 +16,19 @@
  font-family: var(--text-font-family);
  flex-wrap: wrap;
 }
+.fav-center-empty{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 25%;
+  background-color: aliceblue;
+  width: 1300px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ font-family: var(--text-font-family);
+ color: #5518ce;
+ height: 500px;
+ text-align: center;
+}

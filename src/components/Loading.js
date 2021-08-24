@@ -5,7 +5,7 @@ export const Loading = () => {
   return (
     <div className="loading">
       <BoxesLoader
-        boxColor={"#5518ce"}
+        boxColor={"#9A0F9A"}
         style={{ marginBottom: "20px" }}
         desktopSize={"128px"}
         mobileSize={"80px"}
