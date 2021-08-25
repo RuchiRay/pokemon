@@ -34,23 +34,17 @@ export const Reducer = (state, action) => {
        }
        return item;
     })
+   
     
     return {...state,pokemonList:temp,mainList:tempMain};
   }
-  if(type==="REMOVE DUPLICATE")
-  {
-    console.log(mainList);
-    
-    let jsonObject = mainList.map(JSON.stringify)
-     console.log(jsonObject);
-     let uniqueSet = new Set(jsonObject);
-     let  uniqueArray = Array.from(uniqueSet).map(JSON.parse);
-     console.log(uniqueArray);
-     
-     return {...state,mainList:uniqueArray}
-  }
+ 
   if(type==='ADD FAV'){
-    const temp = mainList.filter((item)=>{
+    console.log(mainList)
+    let jsonObject = mainList.map(JSON.stringify)
+    let uniqueSet = new Set(jsonObject);
+    let  uniqueArray = Array.from(uniqueSet).map(JSON.parse);
+    const temp = uniqueArray.filter((item)=>{
       return item.isFav===true
     })
     
@@ -60,7 +54,7 @@ export const Reducer = (state, action) => {
   {
     return {...state,pokemonList:[]}
   }
-  if(type=="EMPTY FEATURED")
+  if(type==="EMPTY FEATURED")
   {
     return{...state,featured:[]}
   }

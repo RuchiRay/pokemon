@@ -13,12 +13,12 @@ const initialState = {
 };
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(Reducer, initialState);
-  const { featured, pokemonList, favList, sliderLoad, pokemonLoad } = state;
+  const { featured, pokemonList, favList, sliderLoad, pokemonLoad,mainList } = state;
+  
   const [term, setTerm] = useState("");
   const [urlList, setUrlList] = useState(
-    "https://pokeapi.co/api/v2/pokemon/?offset=400&limit=20"
+    "https://pokeapi.co/api/v2/pokemon/?offset=400&limit=5"
   );
-  const [change, setChange] = useState(false);
   let page = "";
   // getting the urls for slider
   // getting the url for pokemon list display
@@ -91,13 +91,12 @@ const AppProvider = ({ children }) => {
           dispatch({ type: "SETSLIDERLOAD FALSE" });
         }, 2000);
       }
-      if (listcount === 20) {
+      if (listcount === 5) {
         setTimeout(() => {
           dispatch({ type: "SETPOKEMONLOAD FALSE" });
         }, 2000);
       }
     };
-    console.log('change in chnage or url list');
     
   }, [urlList]);
 
@@ -130,17 +129,15 @@ const AppProvider = ({ children }) => {
   };
   const handleNext = () => {
     dispatch({ type: "EMPTYLIST" });
-    setChange(true);
     page = "next";
     getUrls();
-    dispatch({ type: "REMOVE DUPLICATE"});
+    // dispatch({ type: "REMOVE DUPLICATE"});
   };
   const handlePrev = () => {
     dispatch({ type: "EMPTYLIST" });
-    setChange(true);
     page = "prev";
     getUrls();
-    dispatch({ type: "REMOVE DUPLICATE"});
+    // dispatch({ type: "REMOVE DUPLICATE"});
   };
 
   return (
@@ -151,6 +148,7 @@ const AppProvider = ({ children }) => {
         favList,
         sliderLoad,
         pokemonLoad,
+        mainList,
         handleFav,
         handleNext,
         handlePrev,

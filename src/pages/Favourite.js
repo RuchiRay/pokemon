@@ -5,7 +5,6 @@ import { ImHeart } from "react-icons/im";
 import "../styles/favourite.css";
 export const Favourite = () => {
   const { favList, handleFav } = useGlobalContext();
-  console.log(favList);
   if (favList.length === 0) {
     return (
       <div className="favourite-wrapper">

@@ -8,7 +8,8 @@ import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 import { useGlobalContext } from "../context";
 import "../styles/pokemonlist.css";
 export const Pokemons = () => {
-  const { pokemonList, handleFav, handleNext, handlePrev } = useGlobalContext();
+  const { pokemonList, mainList,handleFav, handleNext, handlePrev } = useGlobalContext();
+  
   return (
     <div className="pokemon-wrapper">
       <div className="page-btn">
