@@ -4,7 +4,7 @@ import { ImHeart } from "react-icons/im";
 
 import "../styles/favourite.css";
 export const Favourite = () => {
-  const { favList, handleFav } = useGlobalContext();
+  const { favList, removeFav } = useGlobalContext();
   if (favList.length === 0) {
     return (
       <div className="favourite-wrapper">
@@ -52,7 +52,7 @@ export const Favourite = () => {
                     <p className="fav-btn">Add to favourites</p>
                     <ImHeart
                       className={isFav ? "red heart" : "heart"}
-                      onClick={() => handleFav(id)}
+                      onClick={() => removeFav(id)}
                     />
                   </div>
                 </div>

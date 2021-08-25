@@ -6,9 +6,14 @@ import { ImHeart } from "react-icons/im";
 // import { FaWeight } from 'react-icons/fa'
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 import { useGlobalContext } from "../context";
+import { PokLoad } from "../components/PokLoad";
 import "../styles/pokemonlist.css";
 export const Pokemons = () => {
-  const { pokemonList, mainList,handleFav, handleNext, handlePrev } = useGlobalContext();
+  const { pokemonList, pokemonLoad, handleFav, handleNext, handlePrev } = useGlobalContext();
+ 
+    if (pokemonLoad) {
+      return <PokLoad />;
+    }  
   
   return (
     <div className="pokemon-wrapper">

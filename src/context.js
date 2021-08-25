@@ -9,15 +9,16 @@ const initialState = {
   favList: [],
   sliderLoad: true,
   pokemonLoad: false,
-  mainList:[]
+  mainList: [],
 };
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(Reducer, initialState);
-  const { featured, pokemonList, favList, sliderLoad, pokemonLoad,mainList } = state;
-  
+  const { featured, pokemonList, favList, sliderLoad, pokemonLoad, mainList } =
+    state;
+
   const [term, setTerm] = useState("");
   const [urlList, setUrlList] = useState(
-    "https://pokeapi.co/api/v2/pokemon/?offset=400&limit=5"
+    "https://pokeapi.co/api/v2/pokemon/?offset=400&limit=1"
   );
   let page = "";
   // getting the urls for slider
@@ -37,12 +38,10 @@ const AppProvider = ({ children }) => {
         return result;
       });
     };
-    if (listcount === 0) 
-    {
-      dispatch({type:'EMPTY FEATURED'})
-     
-      getFeatured();
+    if (listcount === 0) {
+      dispatch({ type: "EMPTY FEATURED" });
 
+      getFeatured();
     }
 
     const getList = async () => {
@@ -59,7 +58,7 @@ const AppProvider = ({ children }) => {
     getList();
 
     //getting the data for every url
-   
+
     const getSingle = async (link, category) => {
       const singleResponse = await fetch(link);
       const dataSingle = await singleResponse.json();
@@ -91,23 +90,21 @@ const AppProvider = ({ children }) => {
           dispatch({ type: "SETSLIDERLOAD FALSE" });
         }, 2000);
       }
-      if (listcount === 5) {
+      if (listcount === 1) {
         setTimeout(() => {
           dispatch({ type: "SETPOKEMONLOAD FALSE" });
         }, 2000);
       }
     };
-    
   }, [urlList]);
-
- 
 
   const handleFav = (id) => {
     const favId = id;
+
     dispatch({ type: "TOGGLE FAV", payLoad: favId });
-   
-    dispatch({ type: "ADD FAV"});
-   };
+
+    dispatch({ type: "ADD FAV" });
+  };
 
   let urlData;
   const getUrls = async () => {
@@ -119,13 +116,11 @@ const AppProvider = ({ children }) => {
     if (page === "next") {
       setUrlList(next);
       console.log("setting url for next");
-      
     }
     if (page === "prev" && previous) {
       console.log("printing previous link", previous);
       setUrlList(previous);
     }
-   
   };
   const handleNext = () => {
     dispatch({ type: "EMPTYLIST" });
@@ -140,6 +135,11 @@ const AppProvider = ({ children }) => {
     // dispatch({ type: "REMOVE DUPLICATE"});
   };
 
+  const removeFav = (id) => {
+    console.log("remove");
+    dispatch({ type: "REMOVE FAV",payLoad:id });
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -152,7 +152,7 @@ const AppProvider = ({ children }) => {
         handleFav,
         handleNext,
         handlePrev,
-        
+        removeFav,
       }}
     >
       {children}

@@ -50,6 +50,19 @@ export const Reducer = (state, action) => {
     
     return {...state,favList:temp}
   }
+  if(type=== "REMOVE FAV")
+  {
+    const temp = favList.filter((item)=>{
+      return item.id!==payLoad
+    })
+    const newtemp = pokemonList.map((item) => {
+      if (payLoad === item.id) {
+       return {...item,isFav:false}
+      }
+      return item;
+    });
+    return {...state,favList:temp,pokemonList:newtemp}
+  }
   if(type==="EMPTYLIST")
   {
     return {...state,pokemonList:[]}
