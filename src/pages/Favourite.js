@@ -1,7 +1,7 @@
 import React from "react";
 import { useGlobalContext } from "../context";
 import { ImHeart } from "react-icons/im";
-
+import { Link } from 'react-router-dom'
 import "../styles/favourite.css";
 export const Favourite = () => {
   const { favList, removeFav } = useGlobalContext();
@@ -22,8 +22,10 @@ export const Favourite = () => {
               You can click on the little hearts on the cards to add your
               favourite pokemon
             </h2>
+            <Link to='/' className='back-btn'>Back</Link>
           </div>
         </div>
+       
       </div>
     );
   }

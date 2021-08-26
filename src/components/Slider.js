@@ -1,5 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Link } from 'react-router-dom'
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import "swiper/components/navigation/navigation.min.css";
@@ -45,8 +46,8 @@ export const Slider = () => {
                     <div className="image">
                       <img src={image} alt="" />
                     </div>
-                    <button className="name-btn">{nam}</button>
-                    
+                    {/* <button className="name-btn">{nam}</button> */}
+                    <Link to={`/pokemons/${nam}`} className='name-btn'>{nam}</Link>
                   </div>
                 </div>
                 <div className="lower">

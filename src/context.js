@@ -16,9 +16,8 @@ const AppProvider = ({ children }) => {
   const { featured, pokemonList, favList, sliderLoad, pokemonLoad, mainList } =
     state;
 
-  const [term, setTerm] = useState("");
   const [urlList, setUrlList] = useState(
-    "https://pokeapi.co/api/v2/pokemon/?offset=400&limit=1"
+    "https://pokeapi.co/api/v2/pokemon/?offset=400&limit=15"
   );
   let page = "";
   // getting the urls for slider
@@ -90,7 +89,7 @@ const AppProvider = ({ children }) => {
           dispatch({ type: "SETSLIDERLOAD FALSE" });
         }, 2000);
       }
-      if (listcount === 1) {
+      if (listcount === 15) {
         setTimeout(() => {
           dispatch({ type: "SETPOKEMONLOAD FALSE" });
         }, 2000);

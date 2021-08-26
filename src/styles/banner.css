@@ -7,13 +7,19 @@
   --heading-font-family: "Oswald", sans-serif;
   --text-font-family: "Fira Sans", sans-serif;
   --bg-gradient: linear-gradient(to bottom right, #5518ce, #9e0e97);
- }
+  /* --main-white: #EBECF0; */
+  --purple: #7a13b3;
+  /* --bg-purple: #efdff8; */
+  --bg-purple: #e2bef7;
+
+  --main-white: #e0e5ec;
+}
 .banner {
   height: 650px;
   text-align: center;
   position: relative;
-  margin-bottom: 400px;
-  background:var(--bg-gradient);
+  margin-bottom: 500px;
+  background: var(--bg-gradient);
 }
 .banner h1 {
   font-family: var(--heading-font-family);

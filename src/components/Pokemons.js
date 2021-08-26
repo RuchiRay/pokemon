@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 // import { HiSparkles } from 'react-icons/hi'
 // import { ImHeart,ImPower } from 'react-icons/im'
 import { ImHeart } from "react-icons/im";
@@ -38,7 +40,8 @@ export const Pokemons = () => {
                   <div className="image">
                     <img src={image} alt="" />
                   </div>
-                  <button className="name-btn">{nam}</button>
+                  <Link to={`/pokemons/${nam}`} className='name-btn'>{nam}</Link>
+      
                   <div className="fav">
                     <p className="fav-btn">Add to favourites</p>
                     <ImHeart
@@ -50,7 +53,7 @@ export const Pokemons = () => {
               </div>
               <div className="lower">
                 <div className="ability">
-                  <p>Ability </p>
+                  <p>Ability: </p>
                   {ability.map((item, index) => {
                     return (
                       <p key={index} className="ability-btn">

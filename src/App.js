@@ -17,7 +17,7 @@ function App() {
           <Route path="/favourite">
             <Favourite />
           </Route>
-          <Route path="/pokemons/:id">
+          <Route path="/pokemons/:nam">
             <SinglePage />
           </Route>
           <Route path="/gallery">

@@ -12,13 +12,19 @@
   flex-direction: column;
   padding-top: 100px;
   width: 100%;
-  background-color: aliceblue;
+  background-color:var(--main-white);
   font-family: var(--text-font-family);
 }
 .list-pok {
   width: 360px;
   margin: 30px;
-  background: #efdff8;
+  background: white;
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  
+  transition: all 0.5s ease-in-out;
+}
+.list-pok:hover {
+  box-shadow: none;
 }
 .image {
   width: 150px;
@@ -35,26 +41,29 @@
   width: 150px;
   background: var(--bg-gradient);
   cursor: pointer;
+  text-align: center;
+  text-decoration: none;
 }
-.page-btn{
+.page-btn {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.next-btn,.prev-btn{
+.next-btn,
+.prev-btn {
   margin: 30px;
   display: flex;
   align-items: center;
   padding: 10px 30px;
-  background:var(--bg-gradient);
+  background: var(--bg-gradient);
   color: white;
   border-radius: 25px;
   font-size: 20px;
   cursor: pointer;
 }
-.prev{
+.prev {
   margin-right: 10px;
 }
-.next{
+.next {
   margin-left: 10px;
 }

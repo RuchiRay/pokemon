@@ -1,6 +1,6 @@
 export const Reducer = (state, action) => {
   const { type, payLoad } = action;
-  let { featured, pokemonList, favList, sliderLoad, pokemonLoad,mainList} = state;
+  let { featured, pokemonList, favList, mainList} = state;
   if (type === "SETSLIDERLOAD TRUE") {
     return { ...state, sliderLoad: true };
   }

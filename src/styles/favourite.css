@@ -7,7 +7,8 @@
   left: 50%;
   transform: translateX(-50%);
   top: 25%;
-  background-color: aliceblue;
+  background-color: #EBECF0;
+  
   width: 1300px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   display: flex;
@@ -21,7 +22,8 @@
   left: 50%;
   transform: translateX(-50%);
   top: 25%;
-  background-color: aliceblue;
+  background-color: #EBECF0;
+  
   width: 1300px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   display: flex;
