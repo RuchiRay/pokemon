@@ -1,11 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// import { HiSparkles } from 'react-icons/hi'
-// import { ImHeart,ImPower } from 'react-icons/im'
 import { ImHeart } from "react-icons/im";
-// import { GiBodyHeight } from 'react-icons/gi'
-// import { FaWeight } from 'react-icons/fa'
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 import { useGlobalContext } from "../context";
 import { PokLoad } from "../components/PokLoad";
@@ -19,6 +15,11 @@ export const Pokemons = () => {
   
   return (
     <div className="pokemon-wrapper">
+      <div className="heading-box fill">
+            <div className="left fill"></div>
+            <h2>Pokemons</h2>
+            <div className="right fill"></div>
+            </div>
       <div className="page-btn">
         <p className="prev-btn" onClick={() => handlePrev()}>
           <FaArrowAltCircleLeft className="prev" />
@@ -38,7 +39,7 @@ export const Pokemons = () => {
               <div className="upper-wrapper">
                 <div className="upper">
                   <div className="image">
-                    <img src={image} alt="" />
+                  <Link to={`/pokemons/${nam}`}><img src={image} alt="" /></Link>
                   </div>
                   <Link to={`/pokemons/${nam}`} className='name-btn'>{nam}</Link>
       

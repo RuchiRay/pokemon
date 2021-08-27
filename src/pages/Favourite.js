@@ -47,9 +47,11 @@ export const Favourite = () => {
               <div className="upper-wrapper">
                 <div className="upper">
                   <div className="image">
-                    <img src={image} alt="" />
+                  <Link to={`/pokemons/${nam}`}><img src={image} alt="" /></Link>
+                  
                   </div>
-                  <button className="name-btn">{nam}</button>
+                  <Link to={`/pokemons/${nam}`} className='name-btn'>{nam}</Link>
+      
                   <div className="fav">
                     <p className="fav-btn">Add to favourites</p>
                     <ImHeart

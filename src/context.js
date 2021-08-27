@@ -109,15 +109,15 @@ const AppProvider = ({ children }) => {
   const getUrls = async () => {
     const res = await fetch(urlList);
     urlData = await res.json();
-    console.log("printing page", page);
+   
     const { next, previous } = urlData;
 
     if (page === "next") {
       setUrlList(next);
-      console.log("setting url for next");
+     
     }
     if (page === "prev" && previous) {
-      console.log("printing previous link", previous);
+     
       setUrlList(previous);
     }
   };
@@ -125,13 +125,13 @@ const AppProvider = ({ children }) => {
     dispatch({ type: "EMPTYLIST" });
     page = "next";
     getUrls();
-    // dispatch({ type: "REMOVE DUPLICATE"});
+   
   };
   const handlePrev = () => {
     dispatch({ type: "EMPTYLIST" });
     page = "prev";
     getUrls();
-    // dispatch({ type: "REMOVE DUPLICATE"});
+    
   };
 
   const removeFav = (id) => {

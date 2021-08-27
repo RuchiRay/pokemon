@@ -17,7 +17,7 @@ export const Banner = () => {
                 <ul className="nav-links">
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/favourite'>Favourites</Link></li>
-                    <li><Link to='/gallery'>Gallery</Link></li>
+                  
                 </ul>
             </div>
             <div className="heading-box">

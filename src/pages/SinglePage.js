@@ -70,8 +70,7 @@ export const SinglePage = () => {
   else 
   {
     const { able, bex, h, movement, name, img, stats, types, w } = info;
-    console.log(able);
-    console.log(types);
+   
    let labels = [];
    let chartData = []
   for(let stat of stats){
@@ -142,6 +141,13 @@ export const SinglePage = () => {
           </div>
         </div>
         <div className="info-wrapper">
+          
+          <div className="stats">
+            <h1>Statistics</h1>
+            <div className="stats-box">
+            <Bar data={data} options={options} />
+            </div>
+          </div>
           <div className="moves">
             <h1>Moves</h1>
             <div className="moves-box">
@@ -150,27 +156,22 @@ export const SinglePage = () => {
               })}
             </div>
           </div>
-          <div className="stats">
-            <h1>Statistics</h1>
-            <div className="stats-box">
-            <Bar data={data} options={options} />
-            </div>
+         
+          <div className="s-ability">
+          <h1>Abilities</h1>
+          <div className="ability-box">
+            {
+              able.map((item,index)=>{
+                return <p key={index}>{item}</p>
+              })
+            }
+          </div>
           </div>
           <div className="s-types">
           <h1>Types</h1>
           <div className="types-box">
             {
               types.map((item,index)=>{
-                return <p key={index}>{item}</p>
-              })
-            }
-          </div>
-          </div>
-          <div className="s-ability">
-          <h1>Abilities</h1>
-          <div className="ability-box">
-            {
-              able.map((item,index)=>{
                 return <p key={index}>{item}</p>
               })
             }

@@ -7,18 +7,26 @@
   --heading-font-family: "Oswald", sans-serif;
   --text-font-family: "Fira Sans", sans-serif;
   --bg-gradient: linear-gradient(to bottom right, #5518ce, #9e0e97);
-  /* --main-white: #EBECF0; */
   --purple: #7a13b3;
-  /* --bg-purple: #efdff8; */
   --bg-purple: #e2bef7;
 
   --main-white: #e0e5ec;
 }
+::-webkit-scrollbar{
+  width: 10px;
+}
+::-webkit-scrollbar-track{
+  background-color: var(--main-white);
+}
+::-webkit-scrollbar-thumb{
+  background-color: var(--purple);
+  border-radius: 50px;
+}
 .banner {
-  height: 650px;
+  height: 500px;
   text-align: center;
   position: relative;
-  margin-bottom: 500px;
+  margin-bottom: 400px;
   background: var(--bg-gradient);
 }
 .banner h1 {
@@ -63,6 +71,7 @@
   align-items: center;
   justify-content: center;
   padding: 45px 0px;
+  width: 100%;
 }
 .left,
 .right {
@@ -70,3 +79,25 @@
   width: 150px;
   height: 2px;
 }
+@media screen and (max-width:800px){
+.banner h1{
+  font-size: 3rem;
+}
+}
+@media screen and (max-width:620px){
+.banner h1{
+  font-size: 3rem;
+}
+.heading-box h2{
+  font-size: 1.7rem;
+}
+.pok-slider{
+  top: 80%;
+}
+}
+@media screen and (max-width:500px){
+  .left,.right{
+    width: 50%;
+  }
+  
+ }

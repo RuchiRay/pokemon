@@ -5,6 +5,12 @@
   flex-wrap: wrap;
   width: 90%;
 }
+.heading-box.fill h2{
+  color: var(--purple);
+}
+.left.fill,.right.fill{
+  background-color: var(--purple);
+}
 .pokemon-wrapper {
   display: flex;
   align-items: center;
@@ -21,7 +27,7 @@
   background: white;
   box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
   
-  transition: all 0.5s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .list-pok:hover {
   box-shadow: none;
@@ -43,6 +49,7 @@
   cursor: pointer;
   text-align: center;
   text-decoration: none;
+  text-transform: capitalize;
 }
 .page-btn {
   display: flex;
@@ -66,4 +73,27 @@
 }
 .next {
   margin-left: 10px;
+}
+@media screen and (max-width:630px){
+  .heading-box.fill h2{
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width:500px)
+{
+  .pokemon-center{
+width: 100%;
+  }
+}
+
+@media screen and (max-width:400px)
+{
+  .prev-btn,.next-btn{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+ .list-pok{
+   margin: 30px 0px;
+   width: 90%;
+ }
 }

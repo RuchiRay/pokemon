@@ -40,7 +40,6 @@ export const Reducer = (state, action) => {
   }
  
   if(type==='ADD FAV'){
-    console.log(mainList)
     let jsonObject = mainList.map(JSON.stringify)
     let uniqueSet = new Set(jsonObject);
     let  uniqueArray = Array.from(uniqueSet).map(JSON.parse);

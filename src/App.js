@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Favourite } from "./pages/Favourite";
 import { SinglePage } from "./pages/SinglePage";
-import { Gallery } from "./pages/Gallery";
 function App() {
   
   return (
@@ -20,9 +19,7 @@ function App() {
           <Route path="/pokemons/:nam">
             <SinglePage />
           </Route>
-          <Route path="/gallery">
-            <Gallery />
-          </Route>
+         
         </Switch>
       </Router>
     </div>

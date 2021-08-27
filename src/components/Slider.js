@@ -17,7 +17,7 @@ export const Slider = () => {
       <Swiper
         slidesPerView={1}
         spaceBetween={30}
-        slidesPerGroup={3}
+       
         loop={true}
         loopFillGroupWithBlank={true}
         pagination={{
@@ -25,11 +25,12 @@ export const Slider = () => {
         }}
         navigation={true}
         breakpoints={{
-          768: {
+                
+          1050:{
             slidesPerView: 2,
             spaceBetween: 40,
           },
-          1024: {
+          1350: {
             slidesPerView: 3,
             spaceBetween: 50,
           },
@@ -44,9 +45,8 @@ export const Slider = () => {
                 <div className="upper-wrapper">
                   <div className="upper">
                     <div className="image">
-                      <img src={image} alt="" />
+                    <Link to={`/pokemons/${nam}`}><img src={image} alt="" /></Link>
                     </div>
-                    {/* <button className="name-btn">{nam}</button> */}
                     <Link to={`/pokemons/${nam}`} className='name-btn'>{nam}</Link>
                   </div>
                 </div>
