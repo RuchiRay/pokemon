@@ -1,6 +1,7 @@
 import React, { useReducer, useContext, useEffect, useState } from "react";
 import { Reducer } from "./Reducer";
 
+
 const urlFeauture = "https://pokeapi.co/api/v2/pokemon/?offset=34&limit=6";
 const AppContext = React.createContext();
 const initialState = {
