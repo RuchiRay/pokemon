@@ -25,6 +25,7 @@ export const Reducer = (state, action) => {
       if (payLoad === item.id) {
        return {...item,isFav:!isFav}
       }
+     
       return item;
     });
     const tempMain = mainList.map((item)=>{
@@ -34,12 +35,12 @@ export const Reducer = (state, action) => {
        }
        return item;
     })
-   
     
     return {...state,pokemonList:temp,mainList:tempMain};
   }
  
   if(type==='ADD FAV'){
+    console.log('printing mainlist',mainList[0]);
     let jsonObject = mainList.map(JSON.stringify)
     let uniqueSet = new Set(jsonObject);
     let  uniqueArray = Array.from(uniqueSet).map(JSON.parse);
@@ -60,7 +61,13 @@ export const Reducer = (state, action) => {
       }
       return item;
     });
-    return {...state,favList:temp,pokemonList:newtemp}
+    const newtempMain = mainList.map((item) => {
+      if (payLoad === item.id) {
+       return {...item,isFav:false}
+      }
+      return item;
+    });
+    return {...state,favList:temp,pokemonList:newtemp,mainList:newtempMain}
   }
   if(type==="EMPTYLIST")
   {

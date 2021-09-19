@@ -100,7 +100,7 @@ const AppProvider = ({ children }) => {
 
   const handleFav = (id) => {
     const favId = id;
-
+    console.log('heart clicked');
     dispatch({ type: "TOGGLE FAV", payLoad: favId });
 
     dispatch({ type: "ADD FAV" });
