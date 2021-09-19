@@ -90,6 +90,7 @@ export const Favourite = () => {
             </div>
           );
         })}
+         <Link to='/' className='back-btn'>Back</Link>
       </div>
     </div>
   );

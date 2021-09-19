@@ -15,8 +15,7 @@ export const Banner = () => {
             <h1 className="banner-heading">Welcome to the Pokemon Library</h1>
             <div className="navbar">
                 <ul className="nav-links">
-                    <li><Link to='/'>Home</Link></li>
-                    <li><Link to='/favourite'>Favourites</Link></li>
+                    <li><Link to='/favourite'>Check out your Favourite Pokemons</Link></li>
                   
                 </ul>
             </div>

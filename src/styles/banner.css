@@ -58,8 +58,11 @@
   font-size: 20px;
   background-color: transparent;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: all 0.4s;
 }
-
+.nav-links li a:hover{
+  box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 15px;
+}
 .heading-box h2 {
   color: white;
   font-family: var(--heading-font-family);
